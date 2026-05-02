@@ -98,10 +98,14 @@ public class CourseRepositoryTest {
     void whenDeleteCourse_thenCourseIsRemoved() {
         // Given
         Long course1Id = course1.getId();
+        student1.removeCourse(course1);
+        entityManager.persist(student1);
+        entityManager.flush();
 
         // When
         courseRepository.deleteById(course1Id);
         entityManager.flush();
+        entityManager.clear();
 
         // Then
         Optional<Course> foundCourse = courseRepository.findById(course1Id);

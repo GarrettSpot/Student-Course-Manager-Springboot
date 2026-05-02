@@ -41,11 +41,17 @@
         </dependency>
 
         <!-- Database -->
-        <!-- Removed H2 database dependency -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
+        </dependency>
+
+        <!-- Embedded database for tests -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <!-- JSP and JSTL -->
@@ -118,6 +124,7 @@
                                 <path>
                                     <groupId>org.projectlombok</groupId>
                                     <artifactId>lombok</artifactId>
+                                    <version>${lombok.version}</version> <!-- Added version here -->
                                 </path>
                             </annotationProcessorPaths>
                         </configuration>
@@ -133,6 +140,7 @@
                                 <path>
                                     <groupId>org.projectlombok</groupId>
                                     <artifactId>lombok</artifactId>
+                                    <version>${lombok.version}</version> <!-- Added version here -->
                                 </path>
                             </annotationProcessorPaths>
                         </configuration>
